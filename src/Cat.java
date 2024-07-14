@@ -19,6 +19,12 @@ public class Cat {
 	// mouth starts about 40% from left edge of head
 	private static final int MOUTH_X = HEAD_DIMENSION/5 * 2;
 	private static final int MOUTH_Y = HEAD_DIMENSION/5 * 3;
+	// first ear starts at half the x of the eye
+	private static final int EAR1_X = EYE_X/2;
+	private static final int EAR1_Y = EYE_Y;
+	
+	private static final int EAR1_HEIGHT = 100;
+	private static final int EAR1_WIDTH = 100;
 	
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
@@ -41,6 +47,11 @@ public class Cat {
 		x = catX + MOUTH_X;
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
+		// Draw the first ear
+		g2.setColor(Color.red);
+		x = EAR1_X;
+		y = EAR1_Y;
+		g2.fillOval(x, y, EAR1_WIDTH, EAR1_HEIGHT);
 		g2.setColor(Color.black);
 		// Meow text appears below cat head, +10 places below 
 		// so it doesn't overlap the drawing
